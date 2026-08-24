@@ -125,7 +125,6 @@ function Nav() {
     { label: 'Producto', href: '#about' },
     { label: 'Cómo funciona', href: '#how' },
     { label: 'Beneficios', href: '#benefits' },
-    { label: 'Precio', href: '#pricing' },
   ]
 
   return (
@@ -151,12 +150,6 @@ function Nav() {
               {l.label}
             </a>
           ))}
-          <a
-            href="#pricing"
-            className="bg-[#2E7D32] text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#1B5E20] transition-colors"
-          >
-            Comprar
-          </a>
         </div>
 
         {/* Mobile hamburger */}
@@ -184,13 +177,6 @@ function Nav() {
               {l.label}
             </a>
           ))}
-          <a
-            href="#pricing"
-            onClick={() => setOpen(false)}
-            className="bg-[#2E7D32] text-white text-sm font-semibold px-4 py-2 rounded-lg text-center"
-          >
-            Comprar
-          </a>
         </div>
       )}
     </nav>
@@ -227,11 +213,11 @@ function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-3">
             <a
-              href="#pricing"
+              href="#about"
               className="bg-[#81C784] hover:bg-[#66BB6A] text-[#1B5E20] font-700 px-8 py-3.5 rounded-xl text-center transition-all hover:scale-105 hover:shadow-lg"
               style={{ fontFamily: 'Poppins, sans-serif' }}
             >
-              Comprar ahora
+              Conoce el proyecto
             </a>
             <a
               href="#how"
@@ -709,153 +695,6 @@ function Gallery() {
   )
 }
 
-// ─── Entrepreneurship ─────────────────────────────────────────────────────────
-
-function Entrepreneurship() {
-  return (
-    <section className="py-20 sm:py-28 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-16">
-          <span className="text-[#2E7D32] text-sm font-600 tracking-widest uppercase">Emprendimiento</span>
-          <h2 style={{ fontFamily: 'Poppins, sans-serif' }} className="text-3xl sm:text-4xl font-800 text-[#1C2B1E] mt-2 mb-4">
-            Una idea innovadora para
-            <span className="text-[#2E7D32] block">un futuro sostenible</span>
-          </h2>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
-          {[
-            {
-              icon: '⚠️',
-              tag: 'Problema',
-              tagColor: 'bg-[#FFEBEE] text-[#C62828]',
-              title: 'El olvido cuesta vidas',
-              content: 'Muchas personas olvidan regar sus plantas o no saben cuándo necesitan agua, causando que se marchiten.',
-              bg: 'bg-[#FFEBEE]',
-              border: 'border-[#FFCDD2]',
-            },
-            {
-              icon: '💡',
-              tag: 'Solución',
-              tagColor: 'bg-[#E8F5E9] text-[#2E7D32]',
-              title: 'Tecnología al rescate',
-              content: 'GreenTech utiliza sensores inteligentes y señales LED para indicar el momento exacto de regar, sin apps ni complicaciones.',
-              bg: 'bg-[#E8F5E9]',
-              border: 'border-[#A5D6A7]',
-            },
-            {
-              icon: '👥',
-              tag: 'Mercado',
-              tagColor: 'bg-[#E3F2FD] text-[#1565C0]',
-              title: 'Para todos',
-              content: 'Estudiantes, familias, colegios y amantes de la naturaleza que desean un método simple y efectivo de cultivar.',
-              bg: 'bg-[#E3F2FD]',
-              border: 'border-[#90CAF9]',
-            },
-          ].map(item => (
-            <div key={item.tag} className={`card-hover rounded-2xl border ${item.border} ${item.bg} p-6`}>
-              <div className="text-4xl mb-3">{item.icon}</div>
-              <span className={`text-xs font-700 px-2 py-0.5 rounded-full ${item.tagColor}`} style={{ fontFamily: 'Poppins, sans-serif' }}>
-                {item.tag}
-              </span>
-              <h3 style={{ fontFamily: 'Poppins, sans-serif' }} className="text-lg font-700 text-[#1C2B1E] mt-3 mb-2">
-                {item.title}
-              </h3>
-              <p className="text-[#4A5568] text-sm leading-relaxed">{item.content}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Quote banner */}
-        <div className="bg-[#2E7D32] rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden">
-          <div className="absolute top-4 left-8 text-8xl text-white/10 font-serif">"</div>
-          <p style={{ fontFamily: 'Poppins, sans-serif' }} className="text-xl sm:text-2xl text-white font-600 max-w-2xl mx-auto relative z-10">
-            GreenTech transforma la jardinería tradicional en una experiencia inteligente y sostenible mediante robótica simple.
-          </p>
-          <div className="mt-6 flex items-center justify-center gap-3">
-            <div className="w-8 h-0.5 bg-[#81C784]" />
-            <span className="text-[#81C784] text-sm font-500">Equipo GreenTech · Feria Escolar 2026</span>
-            <div className="w-8 h-0.5 bg-[#81C784]" />
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// ─── Pricing ──────────────────────────────────────────────────────────────────
-
-function Pricing() {
-  const includes = [
-    { icon: '🏺', item: 'Maceta artesanal pintada a mano' },
-    { icon: '🌍', item: 'Tierra abonada premium' },
-    { icon: '🌱', item: 'Semillas seleccionadas' },
-    { icon: '📖', item: 'Guía de cultivo paso a paso' },
-    { icon: '🤖', item: 'Sistema inteligente demostrativo' },
-  ]
-
-  return (
-    <section id="pricing" className="py-20 sm:py-28 bg-[#F3E9D2]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12">
-          <span className="text-[#2E7D32] text-sm font-600 tracking-widest uppercase">Precio</span>
-          <h2 style={{ fontFamily: 'Poppins, sans-serif' }} className="text-3xl sm:text-4xl font-800 text-[#1C2B1E] mt-2">
-            Tu kit completo, listo para cultivar
-          </h2>
-        </div>
-
-        <div className="max-w-lg mx-auto">
-          <div className="bg-white rounded-3xl shadow-xl overflow-hidden green-glow">
-            {/* Header */}
-            <div className="hero-gradient p-8 text-center">
-              <div style={{ fontFamily: 'Poppins, sans-serif' }} className="text-white/80 text-sm font-500 mb-1 tracking-widest uppercase">
-                Kit completo
-              </div>
-              <h3 style={{ fontFamily: 'Poppins, sans-serif' }} className="text-white text-3xl font-800 mb-2">
-                GreenTech Kit
-              </h3>
-              <div className="flex items-end justify-center gap-1 mb-3">
-                <span className="text-[#81C784] text-lg">S/.</span>
-                <span style={{ fontFamily: 'Poppins, sans-serif' }} className="text-white text-5xl font-900">35</span>
-              </div>
-              <span className="bg-white/20 text-white text-xs px-3 py-1 rounded-full">
-                Edición Feria Escolar 2026
-              </span>
-            </div>
-
-            {/* Contents */}
-            <div className="p-8">
-              <div style={{ fontFamily: 'Poppins, sans-serif' }} className="text-[#4A5568] text-sm font-600 mb-4 uppercase tracking-widest">
-                Incluye:
-              </div>
-              <ul className="space-y-3 mb-8">
-                {includes.map(i => (
-                  <li key={i.item} className="flex items-center gap-3">
-                    <span className="text-xl">{i.icon}</span>
-                    <span className="text-[#1C2B1E] font-500">{i.item}</span>
-                    <span className="ml-auto text-[#2E7D32]">✓</span>
-                  </li>
-                ))}
-              </ul>
-
-              <button
-                className="w-full bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-700 py-4 rounded-xl transition-all hover:scale-[1.02] hover:shadow-lg"
-                style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1rem' }}
-              >
-                Adquirir GreenTech 🌱
-              </button>
-
-              <p className="text-center text-[#4A5568] text-xs mt-4">
-                Disponible durante la feria escolar · Cantidad limitada
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
 // ─── FAQ ──────────────────────────────────────────────────────────────────────
 
 function FAQ() {
@@ -944,7 +783,7 @@ function Footer() {
             </p>
             <div className="inline-flex items-center gap-2 bg-[#2E7D32]/30 border border-[#2E7D32]/40 rounded-full px-3 py-1.5">
               <span className="w-2 h-2 bg-[#81C784] rounded-full animate-pulse-green" />
-              <span className="text-[#81C784] text-xs font-500">Feria de emprendimiento escolar</span>
+              <span className="text-[#81C784] text-xs font-500">Proyecto escolar STEM</span>
             </div>
           </div>
 
@@ -954,7 +793,7 @@ function Footer() {
               Navegación
             </h4>
             <ul className="space-y-2">
-              {['Inicio', 'Producto', 'Cómo funciona', 'Beneficios', 'Precio', 'Preguntas'].map(l => (
+              {['Inicio', 'Producto', 'Cómo funciona', 'Beneficios', 'Preguntas'].map(l => (
                 <li key={l}>
                   <a href="#hero" className="text-[#A5D6A7] hover:text-white text-sm transition-colors">
                     {l}
@@ -1030,8 +869,6 @@ export default function App() {
       <Robotics />
       <Benefits />
       <Gallery />
-      <Entrepreneurship />
-      <Pricing />
       <FAQ />
       <Footer />
     </div>
